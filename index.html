@@ -2,102 +2,484 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yusuf | Running</title>
-    <meta name="description" content="Yusuf'un koşu antrenmanları ve Strava aktiviteleri.">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Yusuf Çelikbaş | Running</title>
+
+    <meta name="description"
+          content="Yusuf Çelikbaş koşu antrenmanları ve Strava aktiviteleri.">
 
     <style>
+
         * {
             box-sizing: border-box;
         }
 
+        html {
+            color-scheme: dark;
+        }
+
         body {
             margin: 0;
-            background: #0d0d0d;
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #181818 0%,
+                    #0d0d0d 42%,
+                    #080808 100%
+                );
+
             color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
         }
 
-        .container {
-            width: min(100% - 32px, 700px);
+
+        .page {
+
+            width: min(100% - 32px, 900px);
+
             margin: 0 auto;
-            padding: 48px 0;
+
+            padding:
+                70px
+                0
+                55px;
+
         }
+
+
+        /* HEADER */
+
+        .hero {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+
+        }
+
+
+        .runner-label {
+
+            color: #fc4c02;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+
+        }
+
 
         h1 {
-            margin: 0 0 6px;
-            font-size: 32px;
+
+            margin: 0;
+
+            font-size: clamp(
+                34px,
+                6vw,
+                52px
+            );
+
+            line-height: 1.05;
+
+            letter-spacing: -1.5px;
+
         }
+
 
         .subtitle {
-            color: #999999;
-            margin-bottom: 18px;
+
+            margin-top: 12px;
+
+            color: #aaaaaa;
+
+            font-size: 16px;
+
         }
+
 
         .accent {
-            width: 46px;
-            height: 3px;
-            margin: 0 auto 32px;
+
+            width: 52px;
+
+            height: 4px;
+
             background: #fc4c02;
+
             border-radius: 999px;
+
+            margin: 24px auto 0;
+
         }
 
-        .section-title {
-            margin: 0 0 18px;
-            font-size: 20px;
+
+
+        /* GRID */
+
+        .dashboard {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                minmax(0, 1fr);
+
+            gap: 22px;
+
+            align-items: start;
+
         }
 
-        .strava {
+
+        .card {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.045
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.09
+                );
+
+            border-radius: 20px;
+
+            padding: 20px;
+
+            box-shadow:
+                0 16px 50px
+                rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        .card-header {
+
             display: flex;
-            justify-content: center;
-            width: 100%;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 16px;
+
         }
 
-        .strava iframe {
-            max-width: 100%;
-            border-radius: 12px;
+
+        .card-title {
+
+            margin: 0;
+
+            font-size: 18px;
+
+            font-weight: 750;
+
         }
+
+
+        .strava-dot {
+
+            width: 8px;
+
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #fc4c02;
+
+            box-shadow:
+                0 0 12px
+                rgba(252, 76, 2, 0.65);
+
+        }
+
+
+
+        /* STRAVA */
+
+        .strava-frame {
+
+            width: 100%;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            background: #ffffff;
+
+        }
+
+
+        .strava-frame iframe {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: none;
+
+            border: 0;
+
+        }
+
+
+        .latest iframe {
+
+            height: 454px;
+
+        }
+
+
+        .summary iframe {
+
+            height: 160px;
+
+        }
+
+
+
+        /* FOOTER */
 
         footer {
-            margin-top: 32px;
+
+            text-align: center;
+
+            margin-top: 40px;
+
             color: #666666;
-            font-size: 13px;
+
+            font-size: 12px;
+
+            letter-spacing: 0.2px;
+
         }
+
+
+        .footer-strava {
+
+            color: #fc4c02;
+
+            font-weight: 700;
+
+        }
+
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            .page {
+
+                width: min(100% - 24px, 520px);
+
+                padding-top: 42px;
+
+            }
+
+
+            .hero {
+
+                margin-bottom: 30px;
+
+            }
+
+
+            .dashboard {
+
+                grid-template-columns: 1fr;
+
+                gap: 18px;
+
+            }
+
+
+            .card {
+
+                padding: 14px;
+
+                border-radius: 16px;
+
+            }
+
+
+            .latest {
+
+                order: 2;
+
+            }
+
+
+            .weekly {
+
+                order: 1;
+
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <div class="container">
 
-        <h1>Yusuf</h1>
+<div class="page">
+
+
+    <header class="hero">
+
+
+        <div class="runner-label">
+
+            RUNNING
+
+        </div>
+
+
+        <h1>
+
+            Yusuf Çelikbaş
+
+        </h1>
+
 
         <div class="subtitle">
-            Running • Training • Progress
+
+            Training • Racing • Progress
+
         </div>
+
 
         <div class="accent"></div>
 
-        <h2 class="section-title">Son Aktivitelerim</h2>
 
-        <div class="strava">
-            <iframe
-                height="454"
-                width="300"
-                frameborder="0"
-                allowtransparency="true"
-                scrolling="no"
-                src="https://www.strava.com/athletes/137189278/latest-rides/e794d3646c190b462019147d0c195e557f34fd2b">
-            </iframe>
-        </div>
+    </header>
 
-        <footer>
-            Aktiviteler Strava üzerinden gösterilir.
-        </footer>
 
-    </div>
+
+    <main class="dashboard">
+
+
+
+        <!-- SON AKTİVİTELER -->
+
+
+        <section class="card latest">
+
+
+            <div class="card-header">
+
+                <h2 class="card-title">
+
+                    Son Aktiviteler
+
+                </h2>
+
+                <span class="strava-dot"></span>
+
+            </div>
+
+
+            <div class="strava-frame">
+
+
+                <iframe
+                    height="454"
+                    width="300"
+                    frameborder="0"
+                    allowtransparency="true"
+                    scrolling="no"
+                    src="https://www.strava.com/athletes/137189278/latest-rides/e794d3646c190b462019147d0c195e557f34fd2b">
+                </iframe>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- HAFTALIK ÖZET -->
+
+
+        <section class="card weekly">
+
+
+            <div class="card-header">
+
+                <h2 class="card-title">
+
+                    Haftalık Özet
+
+                </h2>
+
+                <span class="strava-dot"></span>
+
+            </div>
+
+
+            <div class="strava-frame">
+
+
+                <iframe
+                    height="160"
+                    width="300"
+                    frameborder="0"
+                    allowtransparency="true"
+                    scrolling="no"
+                    src="https://www.strava.com/athletes/137189278/activity-summary/e794d3646c190b462019147d0c195e557f34fd2b">
+                </iframe>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer>
+
+        Aktivite verileri
+        <span class="footer-strava">Strava</span>
+        üzerinden gösterilir.
+
+    </footer>
+
+
+</div>
+
 
 </body>
 </html>
