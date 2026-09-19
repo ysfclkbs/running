@@ -5,33 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Yusuf | Running</title>
+    <meta name="description" content="Yusuf'un koşu antrenmanları ve Strava aktiviteleri.">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             background: #0d0d0d;
-            color: white;
-            font-family: Arial, sans-serif;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
             text-align: center;
         }
 
         .container {
-            max-width: 700px;
-            margin: auto;
-            padding: 40px 20px;
+            width: min(100% - 32px, 700px);
+            margin: 0 auto;
+            padding: 48px 0;
         }
 
         h1 {
-            margin-bottom: 5px;
+            margin: 0 0 6px;
+            font-size: 32px;
         }
 
         .subtitle {
-            color: #999;
-            margin-bottom: 35px;
+            color: #999999;
+            margin-bottom: 18px;
+        }
+
+        .accent {
+            width: 46px;
+            height: 3px;
+            margin: 0 auto 32px;
+            background: #fc4c02;
+            border-radius: 999px;
+        }
+
+        .section-title {
+            margin: 0 0 18px;
+            font-size: 20px;
         }
 
         .strava {
-            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .strava iframe {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        footer {
+            margin-top: 32px;
+            color: #666666;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -46,13 +78,24 @@
             Running • Training • Progress
         </div>
 
+        <div class="accent"></div>
+
+        <h2 class="section-title">Son Aktivitelerim</h2>
+
         <div class="strava">
-
-            <!-- STRAVA EMBED BURAYA GELECEK -->
-
-            <p>Strava aktiviteleri yükleniyor...</p>
-
+            <iframe
+                height="454"
+                width="300"
+                frameborder="0"
+                allowtransparency="true"
+                scrolling="no"
+                src="https://www.strava.com/athletes/137189278/latest-rides/e794d3646c190b462019147d0c195e557f34fd2b">
+            </iframe>
         </div>
+
+        <footer>
+            Aktiviteler Strava üzerinden gösterilir.
+        </footer>
 
     </div>
 
