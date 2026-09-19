@@ -2,14 +2,12 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Yusuf Çelikbaş | Running</title>
 
     <meta name="description"
-          content="Yusuf Çelikbaş koşu antrenmanları ve Strava aktiviteleri.">
+          content="Yusuf Çelikbaş koşu antrenmanları, kişisel dereceleri ve Strava aktiviteleri.">
 
     <style>
 
@@ -28,12 +26,12 @@
             background:
                 radial-gradient(
                     circle at top,
-                    #181818 0%,
-                    #0d0d0d 42%,
-                    #080808 100%
+                    #1a1a1a 0%,
+                    #0d0d0d 45%,
+                    #070707 100%
                 );
 
-            color: #ffffff;
+            color: white;
 
             font-family:
                 -apple-system,
@@ -43,34 +41,62 @@
                 sans-serif;
         }
 
-
         .page {
-
-            width: min(100% - 32px, 900px);
-
+            width: min(100% - 32px, 920px);
             margin: 0 auto;
-
-            padding:
-                70px
-                0
-                55px;
-
+            padding: 58px 0 50px;
         }
 
 
-        /* HEADER */
+        /* PROFİL */
 
         .hero {
-
             text-align: center;
-
-            margin-bottom: 45px;
-
+            margin-bottom: 38px;
         }
 
+        .profile-photo-wrapper {
+            width: 132px;
+            height: 132px;
+
+            margin: 0 auto 20px;
+
+            padding: 4px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fc4c02,
+                    #ff8a50
+                );
+
+            box-shadow:
+                0 0 35px
+                rgba(252, 76, 2, 0.25);
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            /*
+               Fotoğraf dikey olduğu için
+               yüz bölgesini merkeze çekiyoruz.
+            */
+            object-position: 50% 43%;
+
+            border: 4px solid #111;
+        }
 
         .runner-label {
-
             color: #fc4c02;
 
             font-size: 12px;
@@ -79,61 +105,122 @@
 
             letter-spacing: 3px;
 
-            text-transform: uppercase;
-
-            margin-bottom: 10px;
-
+            margin-bottom: 9px;
         }
-
 
         h1 {
-
             margin: 0;
 
-            font-size: clamp(
-                34px,
-                6vw,
-                52px
-            );
-
-            line-height: 1.05;
+            font-size:
+                clamp(
+                    34px,
+                    6vw,
+                    52px
+                );
 
             letter-spacing: -1.5px;
-
         }
-
 
         .subtitle {
+            margin-top: 10px;
 
-            margin-top: 12px;
-
-            color: #aaaaaa;
+            color: #aaa;
 
             font-size: 16px;
-
         }
 
-
         .accent {
-
             width: 52px;
-
             height: 4px;
 
             background: #fc4c02;
 
-            border-radius: 999px;
+            margin: 24px auto;
 
-            margin: 24px auto 0;
-
+            border-radius: 20px;
         }
 
 
+        /* PB KARTLARI */
 
-        /* GRID */
+        .pb-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 170px));
+
+            justify-content: center;
+
+            gap: 14px;
+
+            margin-top: 26px;
+        }
+
+        .pb-card {
+            position: relative;
+
+            padding: 17px 12px;
+
+            border-radius: 16px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
+
+            border:
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            box-shadow:
+                0 12px 30px
+                rgba(0, 0, 0, 0.25);
+        }
+
+        .pb-distance {
+            color: #aaa;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.5px;
+        }
+
+        .pb-time {
+            margin-top: 5px;
+
+            font-size: 27px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.8px;
+        }
+
+        .pb-label {
+            margin-top: 4px;
+
+            color: #fc4c02;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* STRAVA GRID */
 
         .dashboard {
-
             display: grid;
 
             grid-template-columns:
@@ -143,12 +230,9 @@
             gap: 22px;
 
             align-items: start;
-
         }
 
-
         .card {
-
             background:
                 rgba(
                     255,
@@ -173,38 +257,28 @@
             box-shadow:
                 0 16px 50px
                 rgba(0, 0, 0, 0.25);
-
         }
 
-
         .card-header {
-
             display: flex;
-
-            align-items: center;
 
             justify-content: space-between;
 
-            margin-bottom: 16px;
+            align-items: center;
 
+            margin-bottom: 16px;
         }
 
-
         .card-title {
-
             margin: 0;
 
             font-size: 18px;
 
             font-weight: 750;
-
         }
 
-
         .strava-dot {
-
             width: 8px;
-
             height: 8px;
 
             border-radius: 50%;
@@ -214,28 +288,22 @@
             box-shadow:
                 0 0 12px
                 rgba(252, 76, 2, 0.65);
-
         }
 
 
-
-        /* STRAVA */
+        /* STRAVA IFRAME */
 
         .strava-frame {
-
             width: 100%;
 
             overflow: hidden;
 
             border-radius: 12px;
 
-            background: #ffffff;
-
+            background: white;
         }
 
-
         .strava-frame iframe {
-
             display: block;
 
             width: 100%;
@@ -243,103 +311,82 @@
             max-width: none;
 
             border: 0;
-
         }
-
 
         .latest iframe {
-
             height: 454px;
-
         }
-
 
         .summary iframe {
-
             height: 160px;
-
         }
 
-
-
-        /* FOOTER */
 
         footer {
-
             text-align: center;
 
-            margin-top: 40px;
+            margin-top: 38px;
 
-            color: #666666;
+            color: #666;
 
             font-size: 12px;
-
-            letter-spacing: 0.2px;
-
         }
 
-
-        .footer-strava {
-
+        footer span {
             color: #fc4c02;
-
             font-weight: 700;
-
         }
 
 
-
-        /* MOBILE */
+        /* MOBİL */
 
         @media (max-width: 700px) {
 
             .page {
-
                 width: min(100% - 24px, 520px);
-
-                padding-top: 42px;
-
+                padding-top: 35px;
             }
 
+            .profile-photo-wrapper {
+                width: 112px;
+                height: 112px;
+            }
 
             .hero {
-
                 margin-bottom: 30px;
-
             }
 
+            .pb-grid {
+                grid-template-columns:
+                    repeat(2, minmax(0, 1fr));
+
+                max-width: 360px;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .pb-time {
+                font-size: 24px;
+            }
 
             .dashboard {
-
                 grid-template-columns: 1fr;
-
                 gap: 18px;
-
             }
-
 
             .card {
-
                 padding: 14px;
-
                 border-radius: 16px;
-
             }
-
-
-            .latest {
-
-                order: 2;
-
-            }
-
 
             .weekly {
-
                 order: 1;
-
             }
 
+            .latest {
+                order: 2;
+            }
         }
 
     </style>
@@ -348,11 +395,20 @@
 
 <body>
 
-
 <div class="page">
 
 
     <header class="hero">
+
+
+        <div class="profile-photo-wrapper">
+
+            <img
+                src="profile.jpg"
+                alt="Yusuf Çelikbaş"
+                class="profile-photo">
+
+        </div>
 
 
         <div class="runner-label">
@@ -379,6 +435,48 @@
         <div class="accent"></div>
 
 
+        <!-- PB -->
+
+        <div class="pb-grid">
+
+
+            <div class="pb-card">
+
+                <div class="pb-distance">
+                    10K
+                </div>
+
+                <div class="pb-time">
+                    57:40
+                </div>
+
+                <div class="pb-label">
+                    PERSONAL BEST
+                </div>
+
+            </div>
+
+
+            <div class="pb-card">
+
+                <div class="pb-distance">
+                    21.1K
+                </div>
+
+                <div class="pb-time">
+                    2:25:36
+                </div>
+
+                <div class="pb-label">
+                    PERSONAL BEST
+                </div>
+
+            </div>
+
+
+        </div>
+
+
     </header>
 
 
@@ -386,9 +484,7 @@
     <main class="dashboard">
 
 
-
         <!-- SON AKTİVİTELER -->
-
 
         <section class="card latest">
 
@@ -396,9 +492,7 @@
             <div class="card-header">
 
                 <h2 class="card-title">
-
                     Son Aktiviteler
-
                 </h2>
 
                 <span class="strava-dot"></span>
@@ -428,16 +522,13 @@
 
         <!-- HAFTALIK ÖZET -->
 
-
         <section class="card weekly">
 
 
             <div class="card-header">
 
                 <h2 class="card-title">
-
                     Haftalık Özet
-
                 </h2>
 
                 <span class="strava-dot"></span>
@@ -464,7 +555,6 @@
         </section>
 
 
-
     </main>
 
 
@@ -472,14 +562,13 @@
     <footer>
 
         Aktivite verileri
-        <span class="footer-strava">Strava</span>
+        <span>Strava</span>
         üzerinden gösterilir.
 
     </footer>
 
 
 </div>
-
 
 </body>
 </html>
