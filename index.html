@@ -41,19 +41,33 @@
                 sans-serif;
         }
 
+
+        /* ANA SAYFA */
+
         .page {
-            width: min(100% - 32px, 920px);
+            width: min(100% - 32px, 1320px);
             margin: 0 auto;
             padding: 58px 0 50px;
         }
 
 
-        /* PROFİL */
+        /* =========================
+           PROFİL
+        ========================== */
 
         .hero {
             text-align: center;
             margin-bottom: 38px;
         }
+
+        .profile-column {
+            min-width: 0;
+        }
+
+        .profile-column .hero {
+            margin-bottom: 0;
+        }
+
 
         .profile-photo-wrapper {
             width: 180px;
@@ -77,6 +91,7 @@
                 rgba(252, 76, 2, 0.25);
         }
 
+
         .profile-photo {
             width: 100%;
             height: 100%;
@@ -87,14 +102,11 @@
 
             object-fit: cover;
 
-            /*
-               Fotoğraf dikey olduğu için
-               yüz bölgesini merkeze çekiyoruz.
-            */
             object-position: 50% 25%;
 
             border: 4px solid #111;
         }
+
 
         .runner-label {
             color: #fc4c02;
@@ -107,6 +119,7 @@
 
             margin-bottom: 9px;
         }
+
 
         h1 {
             margin: 0;
@@ -121,6 +134,7 @@
             letter-spacing: -1.5px;
         }
 
+
         .subtitle {
             margin-top: 10px;
 
@@ -128,6 +142,7 @@
 
             font-size: 16px;
         }
+
 
         .accent {
             width: 52px;
@@ -141,7 +156,9 @@
         }
 
 
-        /* PB KARTLARI */
+        /* =========================
+           PB KARTLARI
+        ========================== */
 
         .pb-grid {
             display: grid;
@@ -155,6 +172,7 @@
 
             margin-top: 26px;
         }
+
 
         .pb-card {
             position: relative;
@@ -185,6 +203,7 @@
                 rgba(0, 0, 0, 0.25);
         }
 
+
         .pb-distance {
             color: #aaa;
 
@@ -195,6 +214,7 @@
             letter-spacing: 1.5px;
         }
 
+
         .pb-time {
             margin-top: 5px;
 
@@ -204,6 +224,7 @@
 
             letter-spacing: -0.8px;
         }
+
 
         .pb-label {
             margin-top: 4px;
@@ -218,19 +239,27 @@
         }
 
 
-        /* STRAVA GRID */
+        /* =========================
+           ANA 3 SÜTUNLU DÜZEN
+        ========================== */
 
         .dashboard {
             display: grid;
 
             grid-template-columns:
                 minmax(0, 1fr)
+                354px
                 minmax(0, 1fr);
 
             gap: 22px;
 
             align-items: start;
         }
+
+
+        /* =========================
+           STRAVA KARTLARI
+        ========================== */
 
         .card {
             background:
@@ -259,6 +288,7 @@
                 rgba(0, 0, 0, 0.25);
         }
 
+
         .card-header {
             display: flex;
 
@@ -269,6 +299,7 @@
             margin-bottom: 16px;
         }
 
+
         .card-title {
             margin: 0;
 
@@ -276,6 +307,7 @@
 
             font-weight: 750;
         }
+
 
         .strava-dot {
             width: 8px;
@@ -291,7 +323,9 @@
         }
 
 
-        /* STRAVA IFRAME */
+        /* =========================
+           STRAVA IFRAME
+        ========================== */
 
         .strava-frame {
             width: 100%;
@@ -303,6 +337,7 @@
             background: white;
         }
 
+
         .strava-frame iframe {
             display: block;
 
@@ -313,14 +348,20 @@
             border: 0;
         }
 
+
         .latest iframe {
             height: 454px;
         }
+
 
         .summary iframe {
             height: 160px;
         }
 
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             text-align: center;
@@ -332,29 +373,41 @@
             font-size: 12px;
         }
 
+
         footer span {
             color: #fc4c02;
             font-weight: 700;
         }
 
 
-        /* MOBİL */
+        /* =========================
+           MOBİL
+        ========================== */
 
         @media (max-width: 700px) {
 
             .page {
                 width: min(100% - 24px, 520px);
+
                 padding-top: 35px;
             }
+
 
             .profile-photo-wrapper {
                 width: 145px;
                 height: 145px;
             }
 
+
             .hero {
                 margin-bottom: 30px;
             }
+
+
+            .profile-column .hero {
+                margin-bottom: 0;
+            }
+
 
             .pb-grid {
                 grid-template-columns:
@@ -366,125 +419,62 @@
                 margin-right: auto;
             }
 
+
             .pb-time {
                 font-size: 24px;
             }
 
+
             .dashboard {
                 grid-template-columns: 1fr;
+
                 gap: 18px;
             }
 
+
             .card {
                 padding: 14px;
+
                 border-radius: 16px;
             }
 
-            .weekly {
+
+            .profile-column {
                 order: 1;
+
+                margin-bottom: 12px;
             }
 
-            .latest {
+
+            .weekly {
                 order: 2;
             }
+
+
+            .latest {
+                order: 3;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
+
 <div class="page">
-
-
-    <header class="hero">
-
-
-        <div class="profile-photo-wrapper">
-
-            <img
-                src="profile.jpg"
-                alt="Yusuf Çelikbaş"
-                class="profile-photo">
-
-        </div>
-
-
-        <div class="runner-label">
-
-            RUNNING
-
-        </div>
-
-
-        <h1>
-
-            Yusuf Çelikbaş
-
-        </h1>
-
-
-        <div class="subtitle">
-
-            Training • Racing • Progress
-
-        </div>
-
-
-        <div class="accent"></div>
-
-
-        <!-- PB -->
-
-        <div class="pb-grid">
-
-
-            <div class="pb-card">
-
-                <div class="pb-distance">
-                    10K
-                </div>
-
-                <div class="pb-time">
-                    57:40
-                </div>
-
-                <div class="pb-label">
-                    PERSONAL BEST
-                </div>
-
-            </div>
-
-
-            <div class="pb-card">
-
-                <div class="pb-distance">
-                    21.1K
-                </div>
-
-                <div class="pb-time">
-                    2:25:36
-                </div>
-
-                <div class="pb-label">
-                    PERSONAL BEST
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-    </header>
-
 
 
     <main class="dashboard">
 
 
-        <!-- SON AKTİVİTELER -->
+        <!-- =========================
+             SOL
+             SON AKTİVİTELER
+        ========================== -->
 
         <section class="card latest">
 
@@ -502,7 +492,6 @@
 
             <div class="strava-frame">
 
-
                 <iframe
                     height="454"
                     width="300"
@@ -512,7 +501,6 @@
                     src="https://www.strava.com/athletes/137189278/latest-rides/e794d3646c190b462019147d0c195e557f34fd2b">
                 </iframe>
 
-
             </div>
 
 
@@ -520,7 +508,124 @@
 
 
 
-        <!-- HAFTALIK ÖZET -->
+        <!-- =========================
+             ORTA
+             PROFİL + PB
+        ========================== -->
+
+        <div class="profile-column">
+
+
+            <header class="hero">
+
+
+                <div class="profile-photo-wrapper">
+
+                    <img
+                        src="profile.jpg"
+                        alt="Yusuf Çelikbaş"
+                        class="profile-photo">
+
+                </div>
+
+
+                <div class="runner-label">
+
+                    RUNNING
+
+                </div>
+
+
+                <h1>
+
+                    Yusuf Çelikbaş
+
+                </h1>
+
+
+                <div class="subtitle">
+
+                    Training • Racing • Progress
+
+                </div>
+
+
+                <div class="accent"></div>
+
+
+
+                <!-- =========================
+                     PB
+                ========================== -->
+
+                <div class="pb-grid">
+
+
+                    <div class="pb-card">
+
+                        <div class="pb-distance">
+
+                            10K
+
+                        </div>
+
+
+                        <div class="pb-time">
+
+                            57:40
+
+                        </div>
+
+
+                        <div class="pb-label">
+
+                            PERSONAL BEST
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="pb-card">
+
+                        <div class="pb-distance">
+
+                            21.1K
+
+                        </div>
+
+
+                        <div class="pb-time">
+
+                            2:25:36
+
+                        </div>
+
+
+                        <div class="pb-label">
+
+                            PERSONAL BEST
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </header>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             SAĞ
+             HAFTALIK ÖZET
+        ========================== -->
 
         <section class="card weekly">
 
@@ -528,7 +633,9 @@
             <div class="card-header">
 
                 <h2 class="card-title">
+
                     Haftalık Özet
+
                 </h2>
 
                 <span class="strava-dot"></span>
@@ -536,8 +643,7 @@
             </div>
 
 
-            <div class="strava-frame">
-
+            <div class="strava-frame summary">
 
                 <iframe
                     height="160"
@@ -547,7 +653,6 @@
                     scrolling="no"
                     src="https://www.strava.com/athletes/137189278/activity-summary/e794d3646c190b462019147d0c195e557f34fd2b">
                 </iframe>
-
 
             </div>
 
@@ -569,6 +674,7 @@
 
 
 </div>
+
 
 </body>
 </html>
